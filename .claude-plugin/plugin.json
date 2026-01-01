@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Universal Claude Code workflow with specialized agents, skills, hooks, and output styles for any software project. Includes orchestrator, code-reviewer, debugger, docs-writer, security-auditor, refactorer, and test-architect agents.",
   "author": {
-    "name": "Cloud AI Dev",
+    "name": "CloudAI-X",
     "url": "https://x.com/cloudxdev"
   },
   "license": "MIT",
