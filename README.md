@@ -69,6 +69,119 @@ After loading the plugin, these commands become available:
 
 ---
 
+## Usage Examples
+
+### Commands in Action
+
+**Auto-commit your changes:**
+```
+> /project-starter:commit
+
+Looking at staged changes...
+✓ Created commit: feat(auth): add JWT refresh token endpoint
+```
+
+**Full git workflow:**
+```
+> /project-starter:commit-push-pr
+
+✓ Committed: feat: add user dashboard
+✓ Pushed to origin/feature/dashboard
+✓ Created PR #42: https://github.com/you/repo/pull/42
+```
+
+**Verify before shipping:**
+```
+> /project-starter:verify-changes
+
+Spawning verification agents...
+├─ build-validator: ✓ Build passes
+├─ test-runner: ✓ 42 tests pass
+├─ lint-checker: ⚠ 2 warnings (non-blocking)
+└─ security-scanner: ✓ No vulnerabilities
+
+Ready to ship!
+```
+
+### Agents in Action
+
+Agents spawn automatically based on your request:
+
+**You say:** "The login is broken, users get 401 errors"
+```
+[debugger agent activated]
+→ Checking auth middleware... found issue
+→ Token validation uses wrong secret in production
+→ Fix: Update AUTH_SECRET in .env.production
+```
+
+**You say:** "Review my changes"
+```
+[code-reviewer agent activated]
+→ Analyzing 3 files changed...
+✓ Logic is correct
+⚠ Missing null check on line 42
+⚠ Consider adding rate limiting to this endpoint
+```
+
+**You say:** "Add authentication to the API"
+```
+[orchestrator agent activated]
+→ Breaking down into subtasks:
+  1. Design auth schema (spawning architect)
+  2. Implement JWT middleware
+  3. Add login/register endpoints
+  4. Write tests (spawning test-architect)
+  5. Update API docs (spawning docs-writer)
+```
+
+### Skills in Action
+
+Skills provide domain knowledge automatically:
+
+**You ask:** "How should I structure the payment service?"
+```
+[designing-architecture skill applied]
+→ Recommending hexagonal architecture
+→ Payment providers as adapters
+→ Core domain isolated from infrastructure
+```
+
+**You ask:** "Make this endpoint faster"
+```
+[optimizing-performance skill applied]
+→ Adding database indexes
+→ Implementing response caching
+→ Using pagination for large results
+```
+
+### Hooks in Action
+
+Hooks run automatically on events:
+
+**Security block (pre-edit):**
+```
+⛔ BLOCKED: Potential secret detected
+   File: src/config.ts, Line 5
+   Pattern: API key (sk-...)
+
+   Remove the secret and use environment variables.
+```
+
+**Auto-format (post-edit):**
+```
+✓ Formatted with prettier: src/components/Button.tsx
+✓ Formatted with black: scripts/deploy.py
+```
+
+**Desktop notifications:**
+```
+🔔 "Claude needs input" - when waiting for your response
+🔔 "Task complete" - when finished
+```
+
+---
+
 ## Commands Reference
 
 All commands use the format `/project-starter:<command>`.
