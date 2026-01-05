@@ -289,6 +289,22 @@ Hooks run automatically on specific events.
 
 ---
 
+## Examples
+
+For detailed multi-agent orchestration examples, see the [examples/](./examples/) directory:
+
+| Example | Description |
+| ------- | ----------- |
+| [Comprehensive Code Review](./examples/orchestration/comprehensive-code-review/) | 6-agent sequential workflow for thorough code analysis |
+
+Each example includes:
+- **README.md** - Overview and quick start
+- **workflow.md** - Exact prompts to use
+- **verification.md** - How to verify it works
+- **sample-outputs/** - Example agent outputs
+
+---
+
 ## Configuration
 
 ### Add Permissions to Your Project
